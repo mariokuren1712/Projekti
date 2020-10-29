@@ -1,0 +1,1635 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Agis Interijeri</title>
+    <link rel="icon" href="slike/logotip.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+
+        }
+
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        ._house {
+            margin: 0;
+            padding: 0;
+            height: 0;
+            width: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            background: none;
+        }
+
+        body {
+            background: rgb(5, 69, 95);
+            overflow: hidden;
+
+        }
+
+        #_house {
+            height: 480px;
+            width: 400px;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 140px;
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+
+        .svesve:hover {
+            cursor: pointer;
+
+        }
+
+        ._floor_house {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        ._ground {
+            width: 50%;
+            height: 37%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            
+            background: rgb(13, 126, 74);
+            transform-origin: bottom left;
+            transform: skew(67.5deg, -22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skew(67.5deg, -22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skew(67.5deg, -22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skew(67.5deg, -22.5deg);
+        }
+
+        ._projected_area {
+            height: 46%;
+            width: 65%;
+            position: absolute;
+            left: 17.5%;
+            top: 22.5%;
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1);
+            -webkit-transform: scale(1, 1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+        }
+
+        .shrink {
+            transform: scale(0.8);
+            -webkit-transform: scale(0.8, 0.8);
+            -moz-transform: scale(0.8);
+            -ms-transform: scale(0.8);
+        }
+
+        #_pattio {
+            position: absolute;
+            height: 31.5%;
+            bottom: 0;
+            left: 45%;
+            width: 10%;
+            background: grey;
+        }
+
+        /* FENCE */
+        #_fence_container {
+            position: absolute;
+            width: 50%;
+            height: 10%;
+            right: 0;
+            bottom: 0;
+        }
+
+        ._fence_board {
+            width: 4%;
+            height: 100%;
+            background: rgb(244, 244, 244);
+            border-left: 2px solid white;
+            border-top: 2px solid white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        ._fence_board:nth-child(odd) {
+            float: left;
+            margin-right: 1%;
+        }
+
+        ._fence_board:nth-child(even) {
+            float: right;
+            margin-left: 1%;
+        }
+
+        /* TREE */
+        #_tree_stem_house {
+            position: absolute;
+            bottom: 32%;
+            right: 10%;
+            width: 2%;
+            height: 25%;
+            background: rgb(145, 112, 80);
+        }
+
+        #_tree_crown_house {
+            position: absolute;
+            bottom: 48%;
+            right: 3.5%;
+            height: 24%;
+            width: 15%;
+            border-radius: 50%;
+            background: -webkit-radial-gradient(top left, green, rgb(0, 90, 0));
+            background: radial-gradient(at top left, green, rgb(0, 90, 0));
+            overflow: hidden;
+        }
+
+        /* MAILBOX */
+        #_mailbox_house {
+            position: absolute;
+            bottom: 22%;
+            left: 68%;
+            height: 5%;
+            width: 5%;
+        }
+
+        #_mailbox_south_house {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 70%;
+            width: 40%;
+            border-radius: 50% 50% 0 0;
+            background: rgb(240, 240, 240);
+        }
+
+        #_mailbox_west_house {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 48%;
+            width: 60%;
+            background: rgb(206, 206, 206);
+        }
+
+        #_mailbox_top_house {
+            position: absolute;
+            bottom: 23%;
+            right: 12%;
+            height: 65%;
+            width: 88%;
+            border-radius: 8px 0 0 0;
+            background: rgb(206, 206, 206);
+        }
+
+        #_mailbox_red_flag {
+            position: absolute;
+            height: 60%;
+            width: 30%;
+            top: -50%;
+            right: 20%;
+        }
+
+        #_mailbox_red_flag_stem {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+            width: 30%;
+            height: 100%;
+        }
+
+        #_mailbox_red_flag_flag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+            width: 100%;
+            height: 30%;
+        }
+
+        ._water_pipe_end {
+            position: absolute;
+            bottom: 5%;
+            left: 16%;
+            background: gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#999999));
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#999999));
+            background: -moz-linear-gradient(top, #333333, #999999);
+            background: -ms-linear-gradient(top, #333333, #999999);
+            height: 10%;
+            width: 6%;
+            border-radius: 50%;
+            border: 3px solid #999999;
+            overflow: hidden;
+        }
+
+        ._water_pipe_end_2 {
+            position: absolute;
+            bottom: 12%;
+            left: 6%;
+            background: gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#999999));
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#999999));
+            background: -moz-linear-gradient(top, #333333, #999999);
+            background: -ms-linear-gradient(top, #333333, #999999);
+            height: 10%;
+            width: 6%;
+            border-radius: 50%;
+            border: 3px solid #999999;
+            overflow: hidden;
+        }
+
+        ._water_pipe {
+            background: gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333));
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333));
+            background: -moz-linear-gradient(top, #999999, #333333);
+            background: -ms-linear-gradient(top, #999999, #333333);
+            position: absolute;
+            bottom: 6.5%;
+            left: 20%;
+            height: 10%;
+            width: 15%;
+            transform-origin: bottom left;
+            transform: skew(30deg, -22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skew(30deg, -22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skew(30deg, -22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skew(30deg, -22.5deg);
+        }
+
+        ._water_pipe_2 {
+            background: gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333));
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333));
+            background: -moz-linear-gradient(top, #999999, #333333);
+            background: -ms-linear-gradient(top, #999999, #333333);
+            position: absolute;
+            bottom: 14%;
+            left: 10.5%;
+            height: 10%;
+            width: 15%;
+            transform-origin: bottom left;
+            transform: skew(30deg, -22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skew(30deg, -22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skew(30deg, -22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skew(30deg, -22.5deg);
+        }
+
+        .water_in_pipe {
+            background: blue;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80%;
+            height: 100%;
+            transform-origin: bottom left;
+            transform: skewX(-50deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skewX(-50deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skewX(-50deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skewX(-50deg);
+        }
+
+        .water_outside_pipe {
+            position: absolute;
+            bottom: -1%;
+            left: 18%;
+            background: blue;
+            height: 10%;
+            width: 2%;
+        }
+
+        .svesve {
+            width: 100vh;
+            height: 30vh;
+            display: flex;
+            opacity: 1;
+            z-index: 10000000000000;
+
+        }
+
+        .water_outside_pipe_2 {
+            position: absolute;
+            bottom: 6.5%;
+            left: 8%;
+            background: blue;
+            height: 10%;
+            width: 2%;
+        }
+
+        ._brown {
+            background: rgb(125, 72, 21);
+        }
+
+        ._powerline_containeer {
+            position: absolute;
+            top: -65%;
+            right: -43%;
+            height: 30%;
+            width: 80%;
+            transform-origin: top right;
+            transform: skewY(-22.5deg);
+            -webkit-transform-origin: top right;
+            -webkit-transform: skewY(-22.5deg);
+            -moz-transform-origin: top right;
+            -moz-transform: skewY(-22.5deg);
+            -ms-transform-origin: top right;
+            -ms-transform: skewY(-22.5deg);
+            overflow: hidden;
+        }
+
+        .naslov {
+            width: 100%;
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+
+        }
+
+        ._powerline_up {
+            transform-origin: top right;
+            transform: skewY(3deg);
+            -webkit-transform-origin: top right;
+            -webkit-transform: skewY(3deg);
+            -moz-transform-origin: top right;
+            -moz-transform: skewY(3deg);
+            -ms-transform-origin: top right;
+            -ms-transform: skewY(3deg);
+        }
+
+        ._powerline {
+            width: 120%;
+            height: 150%;
+            border-radius: 50%;
+            border-bottom: 2px solid black;
+            position: absolute;
+            bottom: 20%;
+            left: -2%;
+        }
+
+
+        ._first_floor {
+            bottom: 9%;
+        }
+
+        ._first_floor_exploded {
+            bottom: 19%;
+        }
+
+        ._south_wall {
+            position: absolute;
+            width: 32.5%;
+            height: 20%;
+            left: 42%;
+            bottom: 0;
+            background: rgb(117, 76, 36);
+        }
+
+        ._west_wall {
+            position: absolute;
+            width: 24.5%;
+            height: 20%;
+            right: 58%;
+            bottom: 0;
+            background: rgb(96, 57, 19);
+        }
+
+        ._back_east_wall {
+            position: absolute;
+            width: 24.5%;
+            height: 20%;
+            right: 25.5%;
+            bottom: 22.5%;
+            background: rgb(212, 212, 212);
+        }
+
+        ._back_north_wall {
+            position: absolute;
+            width: 32.5%;
+            height: 20%;
+            left: 17.5%;
+            bottom: 16.5%;
+            background: rgb(230, 230, 230);
+        }
+
+
+        ._inner_east_wall {
+            position: absolute;
+            width: 24.5%;
+            height: 18%;
+            right: 38.5%;
+            bottom: 13.5%;
+            background: rgb(223, 217, 182);
+        }
+
+        ._inner_north_wall {
+            position: absolute;
+            width: 19%;
+            height: 18%;
+            left: 26%;
+            bottom: 11.5%;
+            background: rgb(249, 242, 203);
+        }
+
+        ._inner_north_wall_second {
+            position: absolute;
+            width: 14%;
+            height: 18%;
+            right: 36%;
+            bottom: 20%;
+            background: rgb(249, 242, 203);
+        }
+
+        /* WALL NOOK CONTAINER */
+        ._wall_nook {
+            position: absolute;
+            width: 24.5%;
+            height: 17.5%;
+            left: 50%;
+            bottom: 42%;
+            overflow: hidden;
+        }
+
+        ._wall_nook:last-child {
+            left: 17.5%;
+            bottom: 19.5%;
+        }
+
+        ._wall_nook_south {
+            position: absolute;
+            width: 50%;
+            right: 0;
+            height: 100%;
+            background: rgb(96, 57, 19);
+            transform-origin: bottom left;
+            transform: skewY(40deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skewY(40deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skewY(40deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skewY(40deg);
+        }
+
+        ._wall_nook_north {
+            position: absolute;
+            width: 50%;
+            left: 0;
+            height: 100%;
+            background: rgb(96, 57, 19);
+            transform-origin: bottom right;
+            transform: skewY(-40deg);
+            -webkit-transform-origin: bottom right;
+            -webkit-transform: skewY(-40deg);
+            -moz-transform-origin: bottom right;
+            -moz-transform: skewY(-40deg);
+            -ms-transform-origin: bottom right;
+            -ms-transform: skewY(-40deg);
+        }
+
+        ._inner_wall {
+            background: rgb(212, 212, 212);
+        }
+
+        ._floor {
+            background: white;
+            height: 16.5%;
+            width: 32.5%;
+            position: absolute;
+            left: 41.7%;
+            bottom: 0.5%;
+            transform-origin: bottom left;
+            transform: skew(67.5deg, -22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skew(67.5deg, -22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skew(67.5deg, -22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skew(67.5deg, -22.5deg);
+
+        }
+
+        /* WINDOWS */
+        ._window_south_wall {
+            height: 40%;
+            width: 15%;
+            background: yellow;
+            border: 2px solid #CCCCCC;
+            position: absolute;
+            top: 25%;
+            left: 15%;
+        }
+
+        ._window_south_wall:last-child {
+            left: 70%;
+        }
+
+        html {
+            
+            
+            background-size: cover;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            mix-blend-mode: lighten;
+        }
+
+        #sun,
+        #moon {
+            position: absolute;
+            border-radius: 100%;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        #sun {
+            background-color: hsl(50, 100%, 95%);
+            box-shadow:
+                0 0 0.5rem 0 hsla(45, 100%, 90%, 1),
+                0 0 3rem 1.5rem hsla(44, 100%, 80%, .5),
+                0 0 5rem 2.5rem hsla(30, 100%, 60%, .25);
+            height: 3rem;
+            left: 20%;
+            width: 3rem;
+        }
+
+        #moon {
+            background-color: black;
+            box-shadow: inset 0.5rem 0 .5rem -.33rem white;
+            height: 1rem;
+            right: 20%;
+            width: 1rem;
+        }
+
+        ._window_spreuce_horizontal {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            bottom: 0;
+            left: 0;
+            border: none;
+            border-top: 2px solid #CCCCCC;
+        }
+
+        ._window_spreuce_vertical {
+            position: absolute;
+            width: 55%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            border: none;
+            border-right: 2px solid #CCCCCC;
+        }
+
+        ._window_west_wall {
+            height: 40%;
+            width: 20%;
+            background: yellow;
+            border: 2px solid #CCCCCC;
+            position: absolute;
+            top: 25%;
+            left: 40%;
+        }
+
+        /* DOOR */
+        #_door_south_wall {
+            position: absolute;
+            width: 18%;
+            height: 75%;
+            bottom: 0;
+            left: 41%;
+            background: rgb(198, 156, 109);
+            background: rgb(140, 98, 57);
+            border: 2px solid #CCCCCC;
+            border-bottom: none;
+        }
+
+        #_door_handle {
+            position: absolute;
+            width: 20%;
+            height: 4%;
+            background: #999999;
+            top: 50%;
+            left: 70%;
+        }
+
+        ._falu_red {
+            background: rgb(191, 39, 14);
+        }
+
+        ._white_corner {
+            border-right: 2px solid white;
+            border-left: 2px solid white;
+        }
+
+        ._second_floor {
+            bottom: 18.5%;
+        }
+
+        ._second_floor_exploded {
+            bottom: 39%;
+        }
+
+        ._roof_floor {
+            bottom: 28.2%;
+        }
+
+        ._roof_floor_exploded {
+            bottom: 60%;
+        }
+
+        /* ROOF PLATES */
+        ._roof_south {
+            position: absolute;
+            width: 33%;
+            height: 26%;
+            left: 41.8%;
+            bottom: 0;
+            background: rgb(53, 53, 53);
+            transform-origin: bottom left;
+            transform: skew(38.5deg, -22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skew(38.5deg, -22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skew(38.5deg, -22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skew(38.5deg, -22.5deg);
+        }
+
+        ._roof_north {
+            position: absolute;
+            width: 13%;
+            height: 1.5%;
+            left: 17.5%;
+            bottom: 25.2%;
+            background: rgb(53, 53, 53);
+            transform-origin: bottom right;
+            transform: skewY(-23deg);
+            -webkit-transform-origin: bottom right;
+            -webkit-transform: skewY(-23deg);
+            -moz-transform-origin: bottom right;
+            -moz-transform: skewY(-23deg);
+            -ms-transform-origin: bottom right;
+            -ms-transform: skewY(-23deg);
+        }
+
+        /* SHIMNEY */
+        #_shimney_south {
+            position: absolute;
+            top: 60%;
+            left: 40%;
+            width: 3%;
+            height: 8%;
+            background: rgb(41, 41, 41);
+        }
+
+        #_shimney_west {
+            position: absolute;
+            top: 58.3%;
+            left: 37.5%;
+            width: 2.5%;
+            height: 13%;
+            background: rgb(35, 35, 35);
+        }
+
+        ._shimney_top {
+            position: absolute;
+            top: 58.6%;
+            left: 37.3%;
+            width: 3%;
+            height: 1.8%;
+            background: rgb(71, 71, 71);
+            transform-origin: top left;
+            transform: skew(67.5deg, -22.5deg);
+            -webkit-transform-origin: top left;
+            -webkit-transform: skew(67.5deg, -22.5deg);
+            -moz-transform-origin: top left;
+            -moz-transform: skew(67.5deg, -22.5deg);
+            -ms-transform-origin: top left;
+            -ms-transform: skew(67.5deg, -22.5deg);
+        }
+
+
+        #winter {
+            position: absolute;
+            font-family: sans-serif;
+            top: 0px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .ice {
+            visibility: hidden;
+        }
+
+        .snow_on_tree {
+            position: absolute;
+            height: 130%;
+            width: 130%;
+            border-radius: 50%;
+            top: -50%;
+            left: -15%;
+            visibility: hidden;
+        }
+
+        .snow_on_top {
+            box-shadow: 0px -2px 2px 1px white;
+        }
+
+        .snowman {
+            position: absolute;
+            height: 30%;
+            width: 8%;
+            bottom: 35%;
+            left: 5%;
+            visibility: hidden;
+        }
+
+        #bottom_snowman {
+            position: absolute;
+            bottom: 0;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid rgb(200, 243, 254);
+            height: 40%;
+            width: 100%;
+        }
+
+        #middle_snowman {
+            position: absolute;
+            bottom: 35%;
+            left: 10%;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid rgb(200, 243, 254);
+            height: 30%;
+            width: 75%;
+        }
+
+        #head_snowman {
+            position: absolute;
+            bottom: 60%;
+            left: 18%;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid rgb(200, 243, 254);
+            height: 20%;
+            width: 55%;
+        }
+
+        #smile {
+            position: absolute;
+            bottom: 15%;
+            left: 15%;
+            border-radius: 50%;
+            border-bottom: 1px dotted black;
+            height: 70%;
+            width: 70%;
+        }
+
+        #eye_left {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            border-radius: 50%;
+            background: black;
+            height: 20%;
+            width: 15%;
+        }
+
+        #eye_right {
+            position: absolute;
+            top: 15%;
+            right: 15%;
+            border-radius: 50%;
+            background: black;
+            height: 20%;
+            width: 15%;
+        }
+
+        .winter_on {
+            visibility: visible;
+        }
+
+        .snow {
+            background: rgb(226, 247, 252);
+            box-shadow: 0px 0px 4px 2px white;
+        }
+
+        .icicle_container {
+            position: absolute;
+            height: 14%;
+            width: 1.5%;
+            bottom: -13%;
+            right: 2%;
+            overflow: hidden;
+            transform: rotate(34deg);
+            -webkit-transform: rotate(34deg);
+            -moz-transform: rotate(34deg);
+            -ms-transform: rotate(34deg);
+        }
+
+        .icicle {
+            background: rgb(200, 243, 254);
+            height: 100%;
+            width: 100%;
+            transform-origin: top right;
+            transform: skew(-12deg, -5deg);
+            -webkit-transform-origin: top right;
+            -webkit-transform: skew(-12deg, -5deg);
+            -moz-transform-origin: top right;
+            -moz-transform: skew(-12deg, -5deg);
+            -ms-transform-origin: top right;
+            -ms-transform: skew(-12deg, -5deg);
+        }
+
+        .icicle_container:nth-child(2) {
+            height: 28%;
+            width: 1.5%;
+            bottom: -25%;
+            right: 6%;
+        }
+
+        .icicle_container:nth-child(3) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -14%;
+            right: 10%;
+        }
+
+        .icicle_container:nth-child(4) {
+            height: 20%;
+            width: 1.5%;
+            bottom: -18%;
+            right: 15%;
+        }
+
+        .icicle_container:nth-child(5) {
+            height: 20%;
+            width: 1.5%;
+            bottom: -18%;
+            right: 23%;
+        }
+
+        .icicle_container:nth-child(6) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13%;
+            right: 28%;
+        }
+
+        .icicle_container:nth-child(7) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13%;
+            right: 34%;
+        }
+
+        .icicle_container:nth-child(8) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13%;
+            right: 38%;
+        }
+
+        .icicle_container:nth-child(9) {
+            height: 23%;
+            width: 1.5%;
+            bottom: -21%;
+            right: 45%;
+        }
+
+        .icicle_container:nth-child(10) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -14%;
+            right: 48%;
+        }
+
+        .icicle_container:nth-child(11) {
+            height: 22%;
+            width: 1.5%;
+            bottom: -20%;
+            right: 54%;
+        }
+
+        .icicle_container:nth-child(12) {
+            height: 29%;
+            width: 1.5%;
+            bottom: -27%;
+            right: 59%;
+        }
+
+        .icicle_container:nth-child(13) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13.5%;
+            right: 64%;
+        }
+
+        .icicle_container:nth-child(14) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13.5%;
+            right: 74%;
+        }
+
+        .icicle_container:nth-child(14) {
+            height: 15%;
+            width: 1.5%;
+            bottom: -13.5%;
+            right: 74%;
+        }
+
+        .icicle_container:nth-child(15) {
+            height: 30%;
+            width: 3%;
+            bottom: -28%;
+            right: 80%;
+        }
+
+        .icicle_container:nth-child(16) {
+            height: 30%;
+            width: 2%;
+            bottom: -28%;
+            right: 87%;
+        }
+
+        .icicle_container:nth-child(17) {
+            height: 30%;
+            width: 2%;
+            bottom: -28%;
+            right: 94%;
+        }
+
+        .icicle_container:nth-child(18) {
+            height: 30%;
+            width: 2%;
+            bottom: -28%;
+            right: 100%;
+        }
+
+        ._skew_y_22_5 {
+            transform-origin: bottom left;
+            transform: skewY(22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skewY(22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skewY(22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skewY(22.5deg);
+        }
+
+        ._skew_y_-22_5 {
+            transform-origin: bottom left;
+            transform: skewY(-22.5deg);
+            -webkit-transform-origin: bottom left;
+            -webkit-transform: skewY(-22.5deg);
+            -moz-transform-origin: bottom left;
+            -moz-transform: skewY(-22.5deg);
+            -ms-transform-origin: bottom left;
+            -ms-transform: skewY(-22.5deg);
+        }
+
+        ._skew_origin_bottom_right {
+            transform-origin: bottom right;
+            -webkit-transform-origin: bottom right;
+            -moz-transform-origin: bottom right;
+            -ms-transform-origin: bottom right;
+        }
+
+        ._transition_explosion {
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease;
+            -webkit-transition-property: all;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-property: all;
+            -moz-transition-duration: 2s;
+            -moz-transition-timing-function: ease;
+            -ms-transition-property: all;
+            -ms-transition-duration: 2s;
+            -ms-transition-timing-function: ease;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <a href="pocetna.php">
+            <section class="svesve">
+                <div id="_house" class="_house">
+
+                    <div class="_house _floor_house" id="_ground_floor">
+
+
+
+
+
+
+                        <!-- pod -->
+                        <div class="_house _ground" id="_ground">
+                            <div class="_house _transition_explosion _projected_area" id="_projected_area"></div>
+                            <div id="_pattio"></div>
+                        </div>
+
+                        <!-- drvo -->
+                        <div class="_house" id="_tree_stem_house"></div>
+                        <div class="_house" id="_tree_crown_house">
+                            <div class="snow_on_tree snow" id="snow_on_tree"></div>
+                        </div>
+
+                        <!-- ograda -->
+                        <div id="_fence_container" class="_house _skew_y_-22_5">
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                            <div class="_house _fence_board _falu_red"></div>
+                        </div>
+
+                        <!-- posta -->
+                        <div class="_house" id="_mailbox_house">
+
+                            <div class="_house _skew_y_22_5" id="_mailbox_red_flag">
+                                <div class="_house" id="_mailbox_red_flag_stem"></div>
+                                <div class="_house" id="_mailbox_red_flag_flag"></div>
+                            </div>
+
+                            <div class="_house _skew_y_22_5 _skew_origin_bottom_right" id="_mailbox_top_house"></div>
+                            <div class="_house _skew_y_22_5 _skew_origin_bottom_right" id="_mailbox_west_house"></div>
+                            <div class="_house _skew_y_-22_5" id="_mailbox_south_house"></div>
+                        </div>
+
+                        <div class="_house snowman" id="snowman">
+                            <div id="bottom_snowman"></div>
+                            <div id="middle_snowman"></div>
+                            <div id="head_snowman">
+                                <div id="smile">
+
+                                    <div id="eye_left"></div>
+                                    <div id="eye_right"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FIRST FLOOR -->
+
+                    <div class="_house _floor_house _first_floor _transition_explosion" id="_first_floor">
+                        <div class="_house _floor"></div>
+
+                        <!-- inner walls -->
+                        <div class="_house _back_north_wall _skew_y_-22_5"></div>
+                        <div class="_house _back_east_wall _skew_y_22_5 _skew_origin_bottom_right"></div>
+
+                        <div class="_house _inner_north_wall_second _skew_y_-22_5"></div>
+                        <div class="_house _inner_east_wall _skew_y_22_5 _skew_origin_bottom_right"></div>
+                        <div class="_house _inner_north_wall _skew_y_-22_5"></div>
+
+                        <!-- outer walls -->
+                        <div class="_house _south_wall _skew_y_-22_5 _falu_red _white_corner">
+                            <div class="_house _window_south_wall _west_window">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                            <div class="_house" id="_door_south_wall">
+                                <div class="_house" id="_door_handle"></div>
+                            </div>
+                            <div class="_house _window_south_wall _east_window">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                        </div>
+                        <div class="_house _west_wall _skew_y_22_5 _skew_origin_bottom_right _falu_red _white_corner">
+                            <div class="_house _window_west_wall">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- SECOND FLOOR -->
+
+                    <div class="_house _floor_house _second_floor _transition_explosion" id="_second_floor">
+                        <div class="_house _floor _skew_x_y_floor"></div>
+
+                        <!-- inner walls -->
+                        <div class="_house _back_north_wall _skew_y_-22_5"></div>
+                        <div class="_house _back_east_wall _skew_y_22_5 _skew_origin_bottom_right"></div>
+
+                        <div class="_house _inner_north_wall_second _skew_y_-22_5"></div>
+                        <div class="_house _inner_east_wall _skew_y_22_5 _skew_origin_bottom_right"></div>
+                        <div class="_house _inner_north_wall _skew_y_-22_5"></div>
+
+                        <div class="_house _wall_nook _skew_y_22_5 _skew_origin_bottom_right">
+                            <div class="_house _wall_nook_north _inner_wall"></div>
+                            <div class="_house _wall_nook_south _inner_wall"></div>
+                        </div>
+
+
+                        <!-- outer walls -->
+                        <div class="_house _south_wall _skew_y_-22_5 _falu_red _white_corner">
+                            <div class="_house _window_south_wall _west_window">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                            <div class="_house _window_south_wall _east_window">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                        </div>
+                        <div class="_house _west_wall _skew_y_22_5 _skew_origin_bottom_right _falu_red _white_corner">
+                            <div class="_house _window_west_wall">
+                                <div class="_house _window_spreuce_vertical"></div>
+                                <div class="_house _window_spreuce_horizontal"></div>
+                            </div>
+                        </div>
+
+                        <div class="_house _wall_nook _skew_y_22_5 _skew_origin_bottom_right">
+                            <div class="_house _wall_nook_north _falu_red"></div>
+                            <div class="_house _wall_nook_south _falu_red"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- ROOF -->
+
+                    <div class="_house _floor_house _roof_floor _transition_explosion" id="_roof_floor">
+
+
+                        <!-- shimney -->
+                        <div class="_house _skew_y_-22_5" id="_shimney_south"></div>
+                        <div class="_house _skew_y_22_5" id="_shimney_west"></div>
+                        <div class="_house _house_ground_skew _shimney_top" id="_shimney_top"></div>
+                        <!-- roof -->
+                        <div class="_house _roof_north" id="_roof_north"></div>
+                        <div class="_house _roof_south" id="_roof_south">
+                            <div class="ice" id="ice">
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                                <div class="icicle_container">
+                                    <div class="icicle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sky">
+                    <div id="sun"></div>
+                </div>
+
+            </section>
+            <h1 class="naslov">Pritisnite na kuću kako bi ušli na stranicu</h1>
+        </a></center>
+    <script>
+        $('a').click(function(e) {
+            e.preventDefault(); // prevent default anchor behavior
+            var goTo = this.getAttribute("href"); // store anchor href
+
+            // do something while timeOut ticks ... 
+
+            setTimeout(function() {
+                window.location = goTo;
+            }, 1200); // time in ms
+        });
+    </script>
+    <script type="text/javascript">
+        /*
+            toggle explosion script
+            */
+        $(window).load(function() {
+            var exploded = false;
+            $('#_first_floor').addClass('_first_floor_exploded');
+            $('#_second_floor').addClass('_second_floor_exploded');
+            $('#_roof_floor').addClass('_roof_floor_exploded');
+            other_trans_up();
+
+            exploded = true;
+
+            $(document).click(function(event) {
+
+                if (!$(event.target).hasClass('toggle_winter')) {
+                    if (!exploded) {
+
+                        $('#_first_floor').addClass('_first_floor_exploded');
+                        $('#_second_floor').addClass('_second_floor_exploded');
+                        $('#_roof_floor').addClass('_roof_floor_exploded');
+                        other_trans_up();
+                        exploded = true;
+                    } else {
+
+                        $('#_first_floor').removeClass('_first_floor_exploded');
+                        $('#_second_floor').removeClass('_second_floor_exploded');
+                        $('#_roof_floor').removeClass('_roof_floor_exploded');
+                        other_trans_down();
+                        exploded = false;
+                    }
+                }
+
+
+            });
+
+            function other_trans_down() {
+                $('#_projected_area').removeClass('shrink');
+                $('#_powerline_containeer').removeClass('_powerline_up');
+            }
+
+            function other_trans_up() {
+                $('#_projected_area').addClass('shrink');
+                $('#_powerline_containeer').addClass('_powerline_up');
+            }
+
+
+            $snow = false;
+            $('#winter').click(function() {
+                if ($snow) {
+                    $('#_roof_north').removeClass('snow');
+                    $('#_roof_south').removeClass('snow');
+                    $('#_shimney_top').removeClass('snow');
+                    $('#ice').removeClass('winter_on');
+                    $('#_ground').removeClass('snow');
+                    $('#snow_on_tree').removeClass('winter_on');
+                    $('#_tree_crown_house').removeClass('snow_on_top');
+                    $('#snowman').removeClass('winter_on');
+                    $snow = false;
+                } else {
+                    $('#_roof_north').addClass('snow');
+                    $('#_roof_south').addClass('snow');
+                    $('#_shimney_top').addClass('snow');
+                    $('#ice').addClass('winter_on');
+                    $('#_ground').addClass('snow');
+                    $('#_tree_crown_house').addClass('snow_on_top');
+                    $('#snow_on_tree').addClass('winter_on');
+                    $('#snowman').addClass('winter_on');
+                    $snow = true;
+                }
+            });
+        });
+
+        console.clear();
+        document.addEventListener("DOMContentLoaded", init);
+
+
+        function init(event) {
+            window.skyEl = document.getElementById("sky");
+            window.sunEl = document.getElementById("sun");
+            window.moonEl = document.getElementById("moon");
+            window.Gradients = [
+                [{
+                        h: 250,
+                        s: 30,
+                        l: 10,
+                        a: 0,
+                        p: 0.1
+                    },
+                    {
+                        h: 220,
+                        s: 50,
+                        l: 20,
+                        a: 1,
+                        p: 0.1
+                    }
+                ],
+                [{
+                        h: 240,
+                        s: 40,
+                        l: 20,
+                        a: 0.2,
+                        p: 0.275
+                    },
+                    {
+                        h: 200,
+                        s: 50,
+                        l: 30,
+                        a: 1,
+                        p: 0.275
+                    }
+                ],
+                [{
+                        h: 230,
+                        s: 60,
+                        l: 60,
+                        a: 0.5,
+                        p: 0.826
+                    },
+                    {
+                        h: 200,
+                        s: 50,
+                        l: 80,
+                        a: 1,
+                        p: 0.75
+                    }
+                ],
+                [{
+                        h: 15,
+                        s: 70,
+                        l: 60,
+                        a: 1,
+                        p: 1
+                    },
+                    {
+                        h: 60,
+                        s: 90,
+                        l: 90,
+                        a: 1,
+                        p: 1
+                    }
+                ]
+            ];
+
+            window.requestAnimationFrame(step);
+        }
+
+        function step(t) {
+            window.requestAnimationFrame(step);
+            var pos = (Math.sin(t * 0.001) + 1) * 0.5;
+            var css = RadialGradientCSS(window.Gradients, pos);
+            window.skyEl.style.backgroundImage = css;
+            var sun = getSunTranslate(t);
+            window.sunEl.style.transform = sun;
+            var moon = getMoonTranslate(t);
+            window.moonEl.style.transform = moon;
+        }
+
+        function getSunTranslate(t) {
+            var pos = (Math.sin(-t * 0.001) + 1) * 0.5 * 67 + 50;
+            return [
+                "translate(",
+                "-50%, ",
+                pos.toFixed(2),
+                "vh",
+                ")"
+            ].join("");
+        }
+
+        function getMoonTranslate(t) {
+            var pos = (Math.cos(t * 0.0001333) + 1) * 0.5 * 33 + 33;
+            return [
+                "translate(",
+                "-50%, ",
+                pos.toFixed(2),
+                "vh",
+                ")"
+            ].join("");
+        }
+
+        function RadialGradientCSS(gradients, t) {
+            var colorStops = gradients.map(function(e) {
+                var hslp = lerpHslAt(e[0], e[1], t);
+                return RadialGradientPoint(hslp);
+            });
+            var rule = [
+                "radial-gradient(\n",
+                "\tcircle farthest-corner at 50% -10%,\n\t",
+                colorStops.join(",\n\t"),
+                "\n)"
+            ].join("");
+            return rule;
+        }
+
+        function lerpHslAt(a, b, pos) {
+            return {
+                h: lerp(a.h, b.h, pos),
+                s: lerp(a.s, b.s, pos),
+                l: lerp(a.l, b.l, pos),
+                a: lerp(a.a, b.a, pos),
+                p: lerp(a.p, b.p, pos)
+            };
+        }
+
+        function RadialGradientPoint(point) {
+            return [
+                "hsla(",
+                (point.h).toFixed(2), ", ",
+                (point.s).toFixed(2), "%, ",
+                (point.l).toFixed(2), "%, ",
+                (point.a).toFixed(4), ") ",
+                (point.p * 350).toFixed(2),
+                "%"
+            ].join("");
+        }
+
+        function lerp(a, b, f) {
+            return (a * (1.0 - f)) + (b * f);
+        }
+    </script>
+</body>
+
+</html>

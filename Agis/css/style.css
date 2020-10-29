@@ -1,0 +1,545 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.logic {
+    width: 70px;
+    position: fixed;
+    top: 19px;
+    left: 40px;
+    z-index: 100000000000;
+}
+
+.logic:hover {
+    cursor: pointer;
+}
+
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+    z-index: 10000000;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px;
+    z-index: 100000000000000;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    display: block;
+    font-size: 18px;
+    padding: 30px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    z-index: 100000000000000;
+}
+
+nav ul li a:active,
+nav ul li a:hover {
+    color: #dd2d2d;
+    transition: 0.5s;
+    z-index: 100000000000000;
+}
+
+.meni {
+    display: none;
+}
+
+.slika {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../slike/josh-olalde-X1P1_EDNnok-unsplash.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.brojprojekta {
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    height: 200px;
+    background-image: url(../slike/manja.jpg);
+    background-size: cover;
+}
+
+.brojprojekta img {
+    filter: blur(1px);
+    border-top: 1px solid black;
+}
+
+#svesekcije {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 2;
+}
+
+#sekcija1 {
+    margin: 40px;
+    
+}
+#sekcija li{
+    letter-spacing: 20px;
+}
+
+#sekcija2 {
+    margin: 40px;
+}
+
+#sekcija3 {
+    margin: 40px;
+}
+
+#sekcija4 {
+    margin: 40px;
+}
+
+#sekcija5 {
+    margin: 40px;
+}
+
+#sekcija6 {
+    margin: 40px;
+}
+
+.svesekcije section {
+    flex-direction: row;
+    flex
+}
+
+.sss {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 100px;
+}
+
+.front:hover {
+    cursor: pointer;
+}
+
+.roditelj {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.uslugah1 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+    font-weight: 330;
+     animation: pulse 2s infinite;
+    
+}
+
+.flip {
+    height: 199px;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 10px;
+}
+
+.flip img {
+    width: 300px;
+    height: 199px;
+}
+
+.flip .back {
+    background: #ffffff;
+    color: black;
+    text-align: center;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+}
+
+.back {
+    width: 300px;
+    height: auto;
+
+}
+
+.flip .back {
+    width: 330px;
+}
+
+.flip h1 {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1;
+}
+
+.front img:hover {
+    opacity: 0;
+    transition: 2s;
+}
+
+.tustaviprojekte {
+    height: 70%;
+    width: 100%;
+    background-color: white;
+}
+
+.onama {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+#banana {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .meni {
+        position: fixed;
+        z-index: 1000000000;
+        display: block;
+        height: 90px;
+        width: 100%;
+        background-image: url(../slike/1_IkK5Vqlo6M5_kiFFyMP3lQ.png);
+        background-size: 40px;
+        background-color: white;
+        border-bottom: 2px solid black;
+        background-repeat: no-repeat;
+        background-position: 98% center;
+        cursor: pointer;
+    }
+
+    .logic {
+        width: 75px;
+    }
+
+    .slika {
+        width: 100%;
+        height: 100vh;
+        background-image: url(../slike/josh-olalde-X1P1_EDNnok-unsplash.jpg);
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav ul {
+        padding-top: 90px;
+        text-align: center;
+
+    }
+
+    .nav-mobilni {
+        display: block;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid black;
+        z-index: 100000000000000;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .roditelj {
+        font-size: 23px;
+        width: 90%;
+    }
+
+    .roditelj div {
+        
+    }
+
+
+    .brojprojekta {
+        height: 200px;
+    }
+
+    #svesekcije {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 0px;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container:after {
+    content: '';
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("img/bg.jpg") no-repeat center;
+    background-size: cover;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.contact-box {
+    max-width: 550px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.78);
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+.tustaviprojekte{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-content: space-around;
+}
+.tustaviprojekte div{
+    width: 350px;
+    background-color: red;
+    height: 20px;
+    margin: 20px;
+}
+
+.right {
+    padding: 25px 40px;
+}
+
+h2 {
+    position: relative;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #ED1C24;
+}
+.uslugah:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #ED1C24;
+}
+    
+
+
+.field {
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: #ED1C24 2px solid;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #ED1C24;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #ED1C24;
+}
+
+.field:focus {
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #ED1C24;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    margin: 10px;
+
+}
+
+iframe {
+    border: 1px solid black;
+}
+
+.btn:hover {
+    background-color: #ED1C24;
+}
+
+.field:focus {
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .left {
+        height: 200px;
+    }
+}
+
+.kontakt h1 {
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+.kontakt {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.kontakt .container {
+    justify-content: center;
+    align-self: center;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+
+    }
+
+    70% {
+        transform: scale(1);
+
+    }
+
+    100% {
+        transform: scale(0.95)
+    }
+}
+
+.pozadina {
+    width: 75%;
+    background-image: url(../slike/ilustracija.png);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.linkovi{
+    text-decoration: none;
+}
+#svepomaknigore{
+    margin-top: -600px;
+}
+#line{
+    line-height: 15px;
+}
+#line2{
+    line-height: 20px;
+}
